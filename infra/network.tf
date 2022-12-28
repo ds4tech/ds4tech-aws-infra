@@ -75,7 +75,7 @@ module "security_group_ec2" {
       to_port     = 80
       protocol    = "tcp"
       description = "Nginx port"
-      cidr_blocks = "178.43.111.48/32"
+      cidr_blocks = "0.0.0.0/0"
     },
   ]
   # egress

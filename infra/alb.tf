@@ -8,7 +8,7 @@ module "alb" {
 
   vpc_id             = module.vpc.vpc_id
   subnets            = module.vpc.public_subnets
-  security_groups    = [module.security_group_ec2.security_group_id, module.security_group_rds.security_group_id]
+  security_groups    = [module.security_group_ec2.security_group_id]#, module.security_group_rds.security_group_id]
 
   access_logs = {
     bucket = module.s3_bucket_for_logs.s3_bucket_id
