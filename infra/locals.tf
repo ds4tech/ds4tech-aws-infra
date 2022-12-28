@@ -12,18 +12,18 @@ locals {
   # max_allocated_storage = 100
   # port                  = 5432
 
-  # user_data = <<-EOF
-  #   #!/bin/bash -ex
-  #   yum update -y
+  user_data = <<-EOF
+    #!/bin/bash -ex
+    yum update -y
 
-  #   amazon-linux-extras install -y libpq #postgresql14
-  #   amazon-linux-extras install -y nginx1
+    amazon-linux-extras install -y libpq #postgresql14
+    amazon-linux-extras install -y nginx1
     
-  #   echo "<h1>$(curl https://api.kanye.rest/?format=text)</h1>" >  /usr/share/nginx/html/index.html 
-  #   systemctl enable nginx
-  #   systemctl start nginx
+    echo "<h1>$(curl https://api.kanye.rest/?format=text)</h1>" >  /usr/share/nginx/html/index.html 
+    systemctl enable nginx
+    systemctl start nginx
     
-  #   EOF
+    EOF
 
   tags = {
     Name        = local.name
