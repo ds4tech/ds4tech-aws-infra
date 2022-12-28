@@ -74,7 +74,14 @@ module "security_group_ec2" {
       from_port   = 80
       to_port     = 80
       protocol    = "tcp"
-      description = "Nginx port"
+      description = "Nginx on EC2"
+      cidr_blocks = "0.0.0.0/0"
+    },
+    {
+      from_port   = 81
+      to_port     = 81
+      protocol    = "tcp"
+      description = "fixed-response from ALB"
       cidr_blocks = "0.0.0.0/0"
     },
   ]
