@@ -19,7 +19,7 @@ module "ec2_instance" {
   instance_type          = "t2.micro"
   key_name               = "11.22-kp-aws"
   monitoring             = true
-  associate_public_ip_address = false
+  # associate_public_ip_address = false
   vpc_security_group_ids = [module.security_group_ec2.security_group_id]
   subnet_id              = flatten([module.vpc.public_subnets])[0]
 #   subnet_id              ="subnet-04d75cd1fdfbd55ea"
@@ -29,10 +29,10 @@ module "ec2_instance" {
   tags = local.tags
 }
 
-# module "eip" {
-#   source  = "jfcantu/eip/aws"
-#   version = "1.0.1"
-#   instance = module.ec2_instance.id
-#   # associate_with_private_ip = 
-#   # network_interface = 
-# }
+module "eip" {
+  source  = "jfcantu/eip/aws"
+  version = "1.0.1"
+  instance = module.ec2_instance.id
+  # associate_with_private_ip = 
+  # network_interface = 
+}

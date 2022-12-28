@@ -16,7 +16,7 @@ locals {
     #!/bin/bash -ex
     yum update -y
 
-    amazon-linux-extras install -y libpq #postgresql14
+    amazon-linux-extras install -y postgresql14
     amazon-linux-extras install -y nginx1
     
     echo "<h1>$(curl https://api.kanye.rest/?format=text)</h1>" >  /usr/share/nginx/html/index.html 
