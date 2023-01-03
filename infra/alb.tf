@@ -82,7 +82,5 @@ module "alb" {
     }
   ]
 
-  tags = {
-    Environment = "dev"
-  }
+  tags = local.tags
 }
