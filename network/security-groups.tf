@@ -1,4 +1,5 @@
 resource "aws_security_group" "node_group_one" {
+  # name        = "node_group_one"
   name_prefix = "node_group_one"
   vpc_id      = module.vpc.vpc_id
 
@@ -11,9 +12,16 @@ resource "aws_security_group" "node_group_one" {
       "10.0.0.0/8",
     ]
   }
+
+  lifecycle {
+    # Necessary if changing 'name' or 'name_prefix' properties.
+    create_before_destroy = true
+  }
+  tags = local.tags
 }
 
 resource "aws_security_group" "node_group_two" {
+  # name        = "node_group_two"
   name_prefix = "node_group_two"
   vpc_id      = module.vpc.vpc_id
 
@@ -26,4 +34,10 @@ resource "aws_security_group" "node_group_two" {
       "192.168.0.0/16",
     ]
   }
+
+  lifecycle {
+    # Necessary if changing 'name' or 'name_prefix' properties.
+    create_before_destroy = true
+  }
+  tags = local.tags
 }

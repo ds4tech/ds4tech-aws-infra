@@ -1,5 +1,5 @@
 locals {
-  cluster_name = "ds4tech-dev-eks"
+  cluster_name = "ds4tech-dev-k8s"
   name   = "ds4tech"
   region = "eu-central-1"
 
