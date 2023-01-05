@@ -42,7 +42,7 @@ module "security_group_ec2" {
     },
   ]
 
-  tags = local.tags
+  tags = "${merge(local.tags, {Purpose="EC2 instance"})}"
 }
 
 module "security_group_eks_one" {
@@ -80,7 +80,8 @@ module "security_group_eks_one" {
   #   # Necessary if changing 'name' or 'name_prefix' properties.
   #   create_before_destroy = true
   # }
-  tags = local.tags
+  
+  tags = "${merge(local.tags, {Purpose="node_group_one"})}"
 }
 
 
@@ -119,5 +120,5 @@ module "security_group_eks_two" {
   #   # Necessary if changing 'name' or 'name_prefix' properties.
   #   create_before_destroy = true
   # }
-  tags = local.tags
+  tags = "${merge(local.tags, {Purpose="node_group_two"})}"
 }

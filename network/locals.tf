@@ -1,14 +1,13 @@
 locals {
-  cluster_name = "ds4tech-dev-infra-network"
-  name   = "ds4tech"
+  name = "ds4tech-dev-infra-network"
+  cluster_name   = "ms-dev-k8s"
   region = "eu-central-1"
 
   tags = {
-    Name        = local.cluster_name
+    Name        = local.name
     email       = "ds4tech@gmail.com"
     owner       = "Mateusz Szymczyk"
     Terraform   = "true"
     Environment = "dev"
-    Purpose     = "education"
   }
 }
