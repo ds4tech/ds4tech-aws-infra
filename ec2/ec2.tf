@@ -8,7 +8,7 @@ module "ec2_instance" {
   instance_type          = "t2.micro"
   key_name               = "11.22-kp-aws"
   monitoring             = true
-  associate_public_ip_address = false
+  associate_public_ip_address = true
   vpc_security_group_ids = data.aws_security_groups.selected.ids
   subnet_id              = data.aws_subnets.public.ids[0]
 
