@@ -20,9 +20,8 @@ module "ec2_instance" {
   key_name               = "11.22-kp-aws"
   monitoring             = true
   # associate_public_ip_address = false
-  vpc_security_group_ids = [module.security_group_ec2.security_group_id]
-  subnet_id              = flatten([module.vpc.public_subnets])[0]
-#   subnet_id              ="subnet-04d75cd1fdfbd55ea"
+  vpc_security_group_ids = [var.security_group_id]
+  subnet_id              = "subnet-04f8cb5655bafd47e"#data.aws_subnet.public_1a
 
   user_data_base64            = base64encode(local.user_data)
 
