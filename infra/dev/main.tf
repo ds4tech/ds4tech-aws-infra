@@ -12,14 +12,16 @@ provider "aws" {
 module "ec2_instance" {
   source  = "../../modules/ec2"
 
-  region = local.region
+  region          = local.region
+  instance_name   = "micro-instance"
 }
 
-module "3rd_party" {
-  source  = "../../modules/3rd_party"
+# module "additional_resources" {
+#   source  = "../../modules/3rd_party"
 
-  region = local.region
-  vpc_id             = module.vpc.vpc_id
-  subnets            = module.vpc.public_subnets
-  security_groups    = [module.security_group_ec2.security_group_id]
-}
+#   region = local.region
+#   vpc_id             = data.aws_vpc.selected.id
+#   subnets            = data.aws_subnets.public.ids
+#   security_group_id  = data.aws_security_groups.selected.ids
+#   ec2_instance_id    = data.aws_instance.micro_instance.id
+# }

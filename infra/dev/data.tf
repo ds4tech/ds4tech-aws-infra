@@ -8,6 +8,14 @@ data "aws_ami" "amazon-linux-2" {
     values = ["amzn2-ami-hvm*"]
   }
 }
+
+data "aws_instance" "micro_instance" {
+  filter {
+    name   = "tag:Name"
+    values = ["ds4tech"] //micro-instance
+  }
+}
+
 // select existing VPC
 data "aws_vpc" "selected" {
   filter {
