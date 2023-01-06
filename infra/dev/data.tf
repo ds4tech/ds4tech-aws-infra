@@ -12,7 +12,7 @@ data "aws_ami" "amazon-linux-2" {
 data "aws_instance" "micro_instance" {
   filter {
     name   = "tag:Name"
-    values = ["ds4tech"] //micro-instance
+    values = [var.instance_name]
   }
 }
 
