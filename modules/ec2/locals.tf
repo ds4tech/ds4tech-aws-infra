@@ -1,6 +1,6 @@
 
 locals {
-  name   = "ds4tech"
+  name   = "micro-instance"
 
   user_data = <<-EOF
     #!/bin/bash -ex
