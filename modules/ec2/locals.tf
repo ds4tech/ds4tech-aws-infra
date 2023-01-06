@@ -1,7 +1,6 @@
 
 locals {
   name   = "ds4tech"
-  region = "eu-central-1"
 
   user_data = <<-EOF
     #!/bin/bash -ex

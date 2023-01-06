@@ -1,7 +1,7 @@
 
 output "region" {
   description = "AWS region"
-  value       = local.region
+  value       = var.region
 }
 
 output "instance_IP" {
