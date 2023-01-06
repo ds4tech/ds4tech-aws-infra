@@ -7,6 +7,7 @@ module "ec2_instance" {
 
   region          = var.region
   instance_name   = var.instance_name
+  vpc_name        = var.vpc_name
 }
 
 module "additional_resources" {

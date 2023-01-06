@@ -1,7 +1,5 @@
 
 locals {
-  name   = "micro-instance"
-
   user_data = <<-EOF
     #!/bin/bash -ex
     yum update -y
@@ -16,7 +14,7 @@ locals {
     EOF
 
   tags = {
-    Name        = local.name
+    Name        = var.instance_name
     email       = "ds4tech@gmail.com"
     owner       = "Mateusz Szymczyk"
     Terraform   = "true"
