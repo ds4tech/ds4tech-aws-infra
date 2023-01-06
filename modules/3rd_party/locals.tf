@@ -1,7 +1,6 @@
 
 locals {
-  name   = "ds4tech-dev-infra"
-  region = "eu-central-1"
+  name   = "ds4tech-dev-3rd_party"
 
 
   tags = {

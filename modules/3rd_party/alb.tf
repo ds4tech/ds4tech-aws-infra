@@ -6,12 +6,12 @@ module "alb" {
 
   load_balancer_type = "application"
 
-  vpc_id             = module.vpc.vpc_id
-  subnets            = module.vpc.public_subnets
-  security_groups    = [module.security_group_ec2.security_group_id]#, module.security_group_rds.security_group_id]
+  vpc_id             = var.vpc_id
+  subnets            = var.subnets
+  security_groups    = var.security_group_id
 
   access_logs = {
-    bucket = module.s3_bucket_for_logs.s3_bucket_id
+    bucket = var.s3_bucket_for_logs
   }
 
 #   target_groups = [
@@ -53,7 +53,7 @@ module "alb" {
       protocol_version = "HTTP1"
       targets = {
         my_ec2 = {
-          target_id = module.ec2_instance.id
+          target_id = var.ec2_instance_id
           port      = 80
         },
       }
