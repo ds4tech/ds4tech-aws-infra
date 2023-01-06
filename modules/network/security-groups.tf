@@ -3,7 +3,7 @@ module "security_group_ec2" {
   source  = "terraform-aws-modules/security-group/aws"
   version = "~> 4.0"
 
-  name        = local.name
+  name        = var.name
   description = "security group for EC2 instance"
   vpc_id      = module.vpc.vpc_id
 
