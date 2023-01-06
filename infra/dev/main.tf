@@ -2,6 +2,10 @@ provider "aws" {
   region = var.region
 }
 
+# This can not be created here as a module, as it is a prerequesite
+# module "network" {
+#   source = "../../modules/network"
+# }
 module "ec2_instance" {
   source  = "../../modules/ec2"
 
