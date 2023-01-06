@@ -11,7 +11,7 @@ data "aws_ami" "amazon-linux-2" {
 // select existing VPC
 data "aws_vpc" "selected" {
   filter {
-    name = "tag:Name"
+    name   = "tag:Name"
     values = ["education-vpc"]
   }
 }
